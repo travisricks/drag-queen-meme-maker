@@ -47,7 +47,7 @@ const main = require("./controllers/main");
 const app = express();
 
 // App Middleware
-const whitelist = ["http://localhost:3001"];
+const whitelist = ["http://localhost:3001", "http://localhost:3000"];
 const corsOptions = {
   origin: function(origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -58,7 +58,7 @@ const corsOptions = {
   }
 };
 app.use(helmet());
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(morgan("combined")); // use 'tiny' or 'combined'
 
