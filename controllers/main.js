@@ -5,9 +5,18 @@
 - a delete function that will delete a row with a given id
 */
 
+/*
+id SERIAL PRIMARY KEY NOT NULL,
+      queen TEXT,
+      quote TEXT,
+      img TEXT,
+      emotion TEXT,
+      created_at TIMESTAMP
+*/
+
 const getTableData = (req, res, db) => {
   db.select("*")
-    .from("testtable1")
+    .from("memes")
     .then(items => {
       if (items.length) {
         res.json(items);
@@ -19,10 +28,10 @@ const getTableData = (req, res, db) => {
 };
 
 const postTableData = (req, res, db) => {
-  const { first, last, email, phone, location, hobby } = req.body;
-  const added = new Date();
-  db("testtable1")
-    .insert({ first, last, email, phone, location, hobby, added })
+  const { queen, quote, img, emotion } = req.body;
+  const created_at = new Date();
+  db("memes")
+    .insert({ queen, quote, img, emotion, created_at })
     .returning("*")
     .then(item => {
       res.json(item);
@@ -31,10 +40,10 @@ const postTableData = (req, res, db) => {
 };
 
 const putTableData = (req, res, db) => {
-  const { id, first, last, email, phone, location, hobby } = req.body;
-  db("testtable1")
+  const { id, queen, quote, img, emotion } = req.body;
+  db("memes")
     .where({ id })
-    .update({ first, last, email, phone, location, hobby })
+    .update({ queen, quote, img, emotion })
     .returning("*")
     .then(item => {
       res.json(item);
@@ -44,7 +53,7 @@ const putTableData = (req, res, db) => {
 
 const deleteTableData = (req, res, db) => {
   const { id } = req.body;
-  db("testtable1")
+  db("memes")
     .where({ id })
     .del()
     .then(() => {
