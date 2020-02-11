@@ -16,19 +16,19 @@ exports.seed = function(knex) {
         {
           queen: "Manilla Luzon",
           quote: "",
-          img: "/img/01-manilla-crazy.gif",
+          img: "img/01-manilla-crazy.gif",
           emotion: "crazy"
         },
         {
           queen: "RuPaul",
           quote: 'Everybody say "love"',
-          img: "/img/02-rupaul-love.gif",
+          img: "img/02-rupaul-love.gif",
           emotion: "love"
         },
         {
           queen: "Detox",
           quote: "I've had it, officially",
-          img: "/img/02-rupaul-love.gif",
+          img: "img/02-rupaul-love.gif",
           emotion: "mad"
         },
       ]);

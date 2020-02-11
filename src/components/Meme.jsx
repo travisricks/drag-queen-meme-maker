@@ -2,21 +2,21 @@ import React from "react";
 import "../styles/App.scss";
 import "../styles/Meme.scss";
 
-import { generateFakes } from "../utils/faker";
+// import { generateFakes } from "../utils/faker";
 
 export default function Meme(props) {
-  const fakeData = generateFakes();
-
+  // const fakeData = generateFakes();
+console.log('props.item :', props.item);
   return (
     <div className="meme">
       <img
-        src={fakeData[Math.floor(Math.random() * 20) + 1].quoteImage}
+        src={props.img}
         alt="quote"
         className="imageFlex"
       />
       <blockquote>
-        <p>{fakeData[Math.floor(Math.random() * 20) + 1].quote}</p>
-        <p>said by: {fakeData[0].queenName}</p>
+        <p>{props.quote}</p>
+        <p>said by: {props.name}</p>
       </blockquote>
 
       <a
