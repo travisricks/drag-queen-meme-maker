@@ -1,0 +1,31 @@
+$color-teal: #00f2eb;
+$color-hotPink: #fd41a4;
+$color-pink: #fc7aa6;
+$color-yellow: #f5d312;
+$color-gray: #5b514e;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+  background: $color-teal;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchFilters {
+  margin-bottom: 20px;
+}
+
+.searchFilters span {
+  margin-right: 10px;
+}
+.searchFilters form {
+  display: inline-block;
+}

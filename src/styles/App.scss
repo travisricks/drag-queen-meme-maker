@@ -1,0 +1,22 @@
+$color-teal: #00f2eb;
+$color-hotPink: #fd41a4;
+$color-pink: #fc7aa6;
+$color-yellow: #f5d312;
+$color-gray: #5b514e;
+
+* {
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+  background-color: $color-pink;
+}
+
+.wrapper {
+  margin: 0 auto;
+  margin-top: 120px;
+  max-width: 90%;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+}

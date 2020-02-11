@@ -9,7 +9,7 @@ export function generateFakes() {
     let quote = faker.random.words(6);
     let mood = faker.random.word();
     let queenAvatar = faker.image.avatar();
-    let quoteImage = "https://source.unsplash.com/random/800x600";
+    let quoteImage = "https://source.unsplash.com/random/800x700";
 
     fakes.push({
       id: id,
