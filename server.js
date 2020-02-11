@@ -65,10 +65,10 @@ app.use(morgan("combined")); // use 'tiny' or 'combined'
 
 // App Routes - Auth
 // app.get("/", (req, res) => res.send("hello world"));
-app.get("/crud", (req, res) => main.getTableData(req, res, db));
-app.post("/crud", (req, res) => main.postTableData(req, res, db));
-app.put("/crud", (req, res) => main.putTableData(req, res, db));
-app.delete("/crud", (req, res) => main.deleteTableData(req, res, db));
+app.get("/api", (req, res) => main.getTableData(req, res, db));
+app.post("/api", (req, res) => main.postTableData(req, res, db));
+app.put("/api", (req, res) => main.putTableData(req, res, db));
+app.delete("/api", (req, res) => main.deleteTableData(req, res, db));
 
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
