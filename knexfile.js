@@ -1,37 +1,49 @@
 module.exports = {
   development: {
-    client: 'pg',
-    connection:'postgres://localhost/drag_queen_meme',
+    client: "pg",
+    connection:
+      process.env.DATABASE_URL ||
+      `postgres://${process.env.USER}@127.0.0.1:5432/drag_queen_meme`,
+    pool: {
+      min: 2,
+      max: 10,
+    },
     migrations: {
-      directory: './db/migrations'
+      tableName: "knex_migrations",
+      directory: "./db/migrations",
     },
     seeds: {
-      directory: './db/seeds/dev'
+      directory: "./db/seeds/dev",
     },
-    useNullAsDefault: true
   },
 
-  test: {
-    client: 'pg',
-    connection:'postgres://localhost/drag_queen_meme',
+  staging: {
+    client: "pg",
+    connection:
+      process.env.DATABASE_URL ||
+      `postgres://${process.env.USER}@127.0.0.1:5432/drag_queen_meme`,
+    pool: {
+      min: 2,
+      max: 10,
+    },
     migrations: {
-      directory: './db/migrations'
+      tableName: "knex_migrations",
+      directory: "./db/migrations",
     },
-    seeds: {
-      directory: './db/seeds/test'
-    },
-    useNullAsDefault: true
   },
 
   production: {
-    client: 'pg',
-    connection: process.env.DATABASE_URL,
+    client: "pg",
+    connection:
+      process.env.DATABASE_URL ||
+      `postgres://${process.env.USER}@127.0.0.1:5432/drag_queen_meme`,
+    pool: {
+      min: 2,
+      max: 10,
+    },
     migrations: {
-      directory: './db/migrations'
+      tableName: "knex_migrations",
+      directory: "./db/migrations",
     },
-    seeds: {
-      directory: './db/seeds/production'
-    },
-    useNullAsDefault: true
-  }
-}
+  },
+};
