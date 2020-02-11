@@ -34,7 +34,7 @@ const configuration = require("./knexfile")[environment]; // require environment
 var db = require("knex")({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
+    host: process.env.DATABASE_URL || "127.0.0.1",
     user: "",
     password: "",
     database: "drag_queen_meme"
