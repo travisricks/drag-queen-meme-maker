@@ -6,7 +6,6 @@ import "../styles/Meme.scss";
 
 export default function Meme(props) {
   // const fakeData = generateFakes();
-console.log('props.item :', props.item);
   return (
     <div className="meme">
       <img

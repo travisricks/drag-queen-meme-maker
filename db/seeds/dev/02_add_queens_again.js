@@ -14,8 +14,14 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("memes").insert([
         {
+          queen: "RuPaul",
+          quote: "She already done had hers",
+          img: "img/02-rupaul-love.gif",
+          emotion: "happy"
+        },
+        {
           queen: "Manilla Luzon",
-          quote: "",
+          quote: "this is Manilla's quote",
           img: "img/01-manilla-crazy.gif",
           emotion: "crazy"
         },
@@ -28,7 +34,7 @@ exports.seed = function(knex) {
         {
           queen: "Detox",
           quote: "I've had it, officially",
-          img: "img/02-rupaul-love.gif",
+          img: "img/03-detox-mad.gif",
           emotion: "mad"
         },
       ]);

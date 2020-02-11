@@ -17,4 +17,9 @@ $color-gray: #5b514e;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  h2,
+  p {
+    background-color: $color-teal;
+  }
 }
