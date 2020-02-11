@@ -6,6 +6,7 @@
 */
 
 const express = require("express");
+const path = require("path");
 
 // use process.env variables to keep private variables,
 require("dotenv").config();
@@ -25,8 +26,8 @@ const morgan = require("morgan"); // logs requests
 //   }
 // });
 
-const environment = process.env.NODE_ENV || 'development';    // if something else isn't setting ENV, use development
-const configuration = require('./knexfile')[environment];    // require environment's settings from knexfile
+const environment = process.env.NODE_ENV || "development"; // if something else isn't setting ENV, use development
+const configuration = require("./knexfile")[environment]; // require environment's settings from knexfile
 // const database = require('knex')(configuration);              // connect to DB via knex using env's settings
 
 // db Connection w/ localhost
@@ -47,27 +48,35 @@ const main = require("./controllers/main");
 const app = express();
 
 // App Middleware
-const whitelist = ["http://localhost:3001", "http://localhost:3000"];
-const corsOptions = {
-  origin: function(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  }
-};
+// const whitelist = ["http://localhost:3001", "http://localhost:3000"];
+// const corsOptions = {
+//   origin: function(origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   }
+// };
 app.use(helmet());
 // app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(morgan("combined")); // use 'tiny' or 'combined'
 
 // App Routes - Auth
-app.get("/", (req, res) => res.send("hello world"));
+// app.get("/", (req, res) => res.send("hello world"));
 app.get("/crud", (req, res) => main.getTableData(req, res, db));
 app.post("/crud", (req, res) => main.postTableData(req, res, db));
 app.put("/crud", (req, res) => main.putTableData(req, res, db));
 app.delete("/crud", (req, res) => main.deleteTableData(req, res, db));
+
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets
+  app.use(express.static("build"));
+
+  // Express will serve up the front-end index.html file if it doesn't recognize the route
+  app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+}
 
 // App Server Connection
 app.listen(process.env.PORT || 3000, () => {
