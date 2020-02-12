@@ -15,20 +15,21 @@ export default function Meme(props) {
       />
       <blockquote>
         <p>{props.quote}</p>
-        <p>said by: {props.name}</p>
+        <p>👑 {props.name}</p>
       </blockquote>
 
-      <a
+      {/* <a
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
         class="twitter-share-button"
-        data-text="prefill test"
-        data-url="http://example.com"
+        data-text={props.quote}
+        // data-url="http://example.com"
         data-hashtags="DragQueenMemes"
         data-show-count="false"
         target="_blank"
       >
         Share on Twitter
-      </a>
+      </a> */}
+      <a href={props.img} download>Download Meme</a>
       <script
         async
         src="https://platform.twitter.com/widgets.js"
