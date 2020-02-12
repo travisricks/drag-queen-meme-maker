@@ -6,7 +6,7 @@ _This was made during my time as a student at Code Chrysalis_
 
 ## What is this
 
-This is a fullstack app, that displays a postgres database of Drag Queen gifs and quotes. You can filter by queen or mood, and download the gifs to share.
+This is a fullstack app, that displays a postgres database of Drag Queen gifs and quotes. You can filter by queen or mood, and download the gifs to share. [Check out the Demo](https://cc11-drag-queen-stage.herokuapp.com/)
 
 ---
 
