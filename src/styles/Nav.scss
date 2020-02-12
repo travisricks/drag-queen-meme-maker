@@ -16,10 +16,24 @@ $color-gray: #5b514e;
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
-  h2,
-  p {
+  h2 {
     background-color: $color-teal;
+    font-size: 48px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-hotPink;
+    font-weight: 700;
+  }
+
+  .wrapNav {
+    background-color: $color-teal;
+    border: 5px dashed $color-hotPink;
+    padding: 0 25px;
+    line-height: 60px;
+    text-shadow: 2px 2px $color-gray;
   }
 }

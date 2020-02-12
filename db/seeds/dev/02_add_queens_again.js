@@ -15,7 +15,7 @@ exports.seed = function(knex) {
       return knex("memes").insert([
         {
           queen: "RuPaul",
-          quote: "She already done had hers",
+          quote: "Everybody say love",
           img: "img/02-rupaul-love.gif",
           emotion: "happy"
         },
@@ -26,17 +26,41 @@ exports.seed = function(knex) {
           emotion: "crazy"
         },
         {
-          queen: "RuPaul",
-          quote: 'Everybody say "love"',
-          img: "img/02-rupaul-love.gif",
-          emotion: "love"
-        },
-        {
           queen: "Detox",
           quote: "I've had it, officially",
           img: "img/03-detox-mad.gif",
           emotion: "mad"
         },
+        {
+          queen: "LaGanja Estranga",
+          quote: "",
+          img: "img/04-laganja-crazy.gif",
+          emotion: "crazy"
+        },
+        {
+          queen: "Trixie Mattel",
+          quote: "Oh honey",
+          img: "img/05-trixie.gif",
+          emotion: "judgy"
+        },
+        {
+          queen: "Katya",
+          quote: "It's me",
+          img: "img/06-katya.gif",
+          emotion: "happy"
+        },
+        {
+          queen: "Bianca DelRio",
+          quote: "OK, Queen",
+          img: "img/07-bianca.gif",
+          emotion: "shade"
+        },
+        {
+          queen: "Latrice Royale",
+          quote: "Shade!",
+          img: "img/08-latrice.gif",
+          emotion: "shade"
+        }
       ]);
     });
 };

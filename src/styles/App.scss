@@ -12,11 +12,16 @@ $color-gray: #5b514e;
 
 .wrapper {
   margin: 0 auto;
-  margin-top: 120px;
+  margin-top: 200px;
   max-width: 90%;
 }
 
 .images {
+  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
 }

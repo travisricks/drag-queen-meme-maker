@@ -4,28 +4,19 @@ $color-pink: #fc7aa6;
 $color-yellow: #f5d312;
 $color-gray: #5b514e;
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 100%;
-  background: $color-teal;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .searchFilters {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .searchFilters span {
   margin-right: 10px;
 }
+
+.searchFilters select {
+  margin-right: 10px;
+}
+
 .searchFilters form {
   display: inline-block;
 }

@@ -8,14 +8,14 @@ export default function SearchFilters(props) {
     <div className="searchFilters">
       <span>Select by:</span>
       <form>
-        <select>
-          <option value="queen">Queen</option>
+        <select onChange={e => props.click(e.target.value)}>
+          <option value="queen">&#9660; Queen</option>
           {props.names.map(item => (
             <option value={item}>{item}</option>
           ))}
         </select>
-        <select>
-          <option value="queen">Mood</option>
+        <select onChange={e => props.clickMood(e.target.value)}>
+          <option value="queen">&#9660; Mood</option>
           {props.moods.map(item => (
             <option value={item}>{item}</option>
           ))}
